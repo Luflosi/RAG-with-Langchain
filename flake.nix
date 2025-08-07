@@ -16,8 +16,12 @@
       pkgs = nixpkgs.legacyPackages.${system};
 
       pythonEnv = pkgs.python3.withPackages (ps: with ps; [
+        chromadb
         jupyterlab
-        pandas
+        langchain
+        langchain-community
+        langchain-openai
+        # langchainhub
       ]);
     in {
       default = pkgs.mkShellNoCC {
