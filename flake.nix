@@ -31,6 +31,9 @@
 
         shellHook = ''
           export PYTHONPATH="${lib.getExe pythonEnv}"
+
+          # Load OpenAI API key if this file exists
+          source .OpenAI-API-Key.sh || true
         '';
       };
     });
