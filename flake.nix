@@ -25,14 +25,21 @@
         jupyterlab
         langchain
         langchain-community
+        langchain-huggingface
+        langchain-ollama
         langchain-openai
         # langchainhub
+        sentence-transformers
+        streamlit
         streamlit-jupyter
       ]);
     in {
       default = pkgs.mkShellNoCC {
-        packages = [
+        packages = with pkgs; [
           pythonEnv
+          nix-init
+          git
+          lix
         ];
 
         shellHook = ''
