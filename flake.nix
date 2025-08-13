@@ -13,7 +13,12 @@
     ] function;
   in {
     devShells = forAllSystems (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          (import ./nix/overlays.nix)
+        ];
+      };
 
       pythonEnv = pkgs.python3.withPackages (ps: with ps; [
         chromadb
@@ -22,6 +27,7 @@
         langchain-community
         langchain-openai
         # langchainhub
+        streamlit-jupyter
       ]);
     in {
       default = pkgs.mkShellNoCC {
