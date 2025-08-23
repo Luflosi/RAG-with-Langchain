@@ -1,4 +1,5 @@
 # RAG-Powered Chatbot and Conversational AI System with LangChain & ChromaDB
+<img width="800" height="450" alt="Rag_architecture drawio (3)" src="https://github.com/user-attachments/assets/750d1752-a515-4105-8420-c9597bff8fb9" />
 
 ## Project Overview
 
