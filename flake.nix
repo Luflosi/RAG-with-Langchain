@@ -32,6 +32,7 @@
         sentence-transformers
         streamlit
         streamlit-jupyter
+        ragas
       ]);
     in {
       default = pkgs.mkShellNoCC {
